@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+sqlalchemy
+psycopg2-binary
+alembic
+python-dotenv
+
+# JWT Authentication
+python-jose[cryptography]
+pwdlib[argon2]
+python-multipart
+email-validator
+
+# Email
+resend

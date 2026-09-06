@@ -1,0 +1,76 @@
+services:
+
+  # ==========================================
+  # POSTGRESQL DATABASE
+  # ==========================================
+
+  postgres:
+    image: postgres:16
+    container_name: osprey-postgres
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_DB: osprey_fasteners
+      POSTGRES_USER: Nayabkhan
+      POSTGRES_PASSWORD: Nayabkhan@12
+
+    ports:
+      - "5433:5432"
+
+    volumes:
+      - osprey_postgres_data:/var/lib/postgresql/data
+
+
+  # ==========================================
+  # FASTAPI BACKEND
+  # ==========================================
+
+  backend:
+    build:
+      context: ./Backend
+      dockerfile: Dockerfile
+
+    container_name: osprey-backend
+    restart: unless-stopped
+
+    env_file:
+      - ./Backend/.env
+
+    environment:
+      DATABASE_URL: postgresql+psycopg2://Nayabkhan:Nayabkhan%4012@postgres:5432/osprey_fasteners
+
+    ports:
+      - "8000:8000"
+
+    depends_on:
+      - postgres
+
+
+  # ==========================================
+  # REACT FRONTEND
+  # ==========================================
+
+  frontend:
+    build:
+      context: ./Frontend
+      dockerfile: Dockerfile
+
+      args:
+        VITE_API_URL: http://localhost:8000
+
+    container_name: osprey-frontend
+    restart: unless-stopped
+
+    ports:
+      - "5173:80"
+
+    depends_on:
+      - backend
+
+
+# ==========================================
+# DATABASE VOLUME
+# ==========================================
+
+volumes:
+  osprey_postgres_data:

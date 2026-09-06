@@ -1,0 +1,247 @@
+.hero {
+  background: #f4f4f1;
+  min-height: 650px;
+  overflow: hidden;
+}
+
+.hero-container {
+  width: 90%;
+  max-width: 1400px;
+  min-height: 650px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.hero-label {
+  font-size: 11px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.hero-content h1 {
+  font-size: clamp(45px, 5vw, 78px);
+  line-height: 0.98;
+  letter-spacing: -3px;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+.hero-content h1 span {
+  color: #777;
+}
+
+.hero-content p {
+  max-width: 570px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #555;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 14px;
+  margin-top: 35px;
+}
+
+.primary-btn {
+  background: #111;
+  color: white;
+  padding: 16px 24px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.primary-btn:hover {
+  background: #333;
+}
+
+.secondary-btn {
+  border: 1px solid #111;
+  padding: 16px 24px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.secondary-btn:hover {
+  background: #111;
+  color: #fff;
+}
+
+.hero-features {
+  display: flex;
+  gap: 40px;
+  margin-top: 55px;
+}
+
+.feature {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.feature strong {
+  font-size: 12px;
+}
+
+.feature span {
+  font-size: 11px;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #666;
+}
+
+.hero-image-area {
+  position: relative;
+  height: 540px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-circle {
+  width: 440px;
+  height: 440px;
+  background: #d9d9d4;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.fastener-image {
+  width: 230px;
+  height: 430px;
+  position: relative;
+  transform: rotate(12deg);
+  z-index: 2;
+}
+
+.bolt-head {
+  width: 170px;
+  height: 120px;
+  background: linear-gradient(
+    145deg,
+    #f5f5f5,
+    #999,
+    #eeeeee
+  );
+  clip-path: polygon(
+    25% 0,
+    75% 0,
+    100% 35%,
+    90% 100%,
+    10% 100%,
+    0 35%
+  );
+  margin: auto;
+  position: relative;
+}
+
+.bolt-head div {
+  width: 70px;
+  height: 50px;
+  background: #777;
+  position: absolute;
+  top: 32px;
+  left: 50px;
+  clip-path: polygon(
+    25% 0,
+    75% 0,
+    100% 35%,
+    90% 100%,
+    10% 100%,
+    0 35%
+  );
+}
+
+.bolt-body {
+  width: 90px;
+  height: 190px;
+  margin: -5px auto 0;
+  background: linear-gradient(
+    90deg,
+    #888,
+    #eeeeee,
+    #999
+  );
+}
+
+.bolt-thread {
+  width: 92px;
+  height: 130px;
+  margin: 0 auto;
+  background: repeating-linear-gradient(
+    -8deg,
+    #777 0px,
+    #777 5px,
+    #ddd 6px,
+    #ddd 10px
+  );
+}
+
+.image-tag {
+  position: absolute;
+  right: 0;
+  bottom: 70px;
+  background: #111;
+  color: white;
+  padding: 15px 20px;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.image-tag span {
+  font-size: 8px;
+  letter-spacing: 2px;
+}
+
+.image-tag strong {
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 900px) {
+
+  .hero-container {
+    grid-template-columns: 1fr;
+    padding: 70px 0;
+  }
+
+  .hero-image-area {
+    height: 450px;
+  }
+
+  .hero-content h1 {
+    letter-spacing: -2px;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .hero-features {
+    gap: 20px;
+  }
+
+  .image-circle {
+    width: 300px;
+    height: 300px;
+  }
+
+  .fastener-image {
+    transform: scale(0.75) rotate(12deg);
+  }
+}

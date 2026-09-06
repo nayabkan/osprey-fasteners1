@@ -1,0 +1,112 @@
+.quote-page{background:#fff}.quote-main{padding:52px 0 78px}.quote-container{width:78%;max-width:1318px;margin:0 auto}.quote-container h1{font-size:28px;margin:0 0 7px}.quote-description{font-size:17px;margin:0 0 45px}.quote-form{width:660px;max-width:100%;margin:0 auto}.form-group{margin-bottom:27px}.form-group label,.part-field label,.quantity-field label,.part-title-row>label{display:block;margin-bottom:7px;font-size:17px;font-weight:700}.form-group input,.part-field input,.quantity-field input{width:100%;height:45px;border:1px solid #222;padding:8px 10px;font-size:16px;outline:none}.form-group input:focus,.part-field input:focus,.quantity-field input:focus,textarea:focus{border:2px solid #111}.part-row{display:flex;gap:26px;align-items:flex-end;margin-bottom:27px}.part-field{flex:1}.quantity-field{width:135px}.part-label-row,.part-title-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:7px}.part-label-row label,.part-title-row label{margin:0}.add-part{border:0;background:transparent;font-size:15px;font-weight:700;cursor:pointer}.add-part:hover{text-decoration:underline}.quote-items-block{margin-bottom:8px}.quote-items-block .part-row{margin-bottom:12px}.quote-items-block .part-field small{display:block;margin-top:4px;color:#777;font-size:11px}.remove-part{height:45px;border:1px solid #111;background:#fff;padding:0 12px;font-size:11px;cursor:pointer}.message-group textarea{width:100%;height:130px;border:1px solid #222;padding:10px;font-family:inherit;font-size:16px;resize:vertical}.submit-btn{margin-top:10px;min-width:122px;height:45px;border:0;background:#050505;color:#fff;font-size:17px;font-weight:600;cursor:pointer}.success-message{width:660px;max-width:100%;margin:0 auto 20px;padding:12px;border:1px solid #222;font-size:13px}@media(max-width:700px){.quote-container{width:88%}.quote-form{width:100%}.part-row{flex-wrap:wrap}.quantity-field{width:135px}.remove-part{height:45px}}
+
+
+/* =========================
+   LOGIN REQUIRED POPUP
+========================= */
+
+.login-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+}
+
+.login-popup {
+  position: relative;
+  width: 100%;
+  max-width: 430px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 35px 30px;
+  text-align: center;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+  animation: loginPopupShow 0.2s ease-out;
+}
+
+@keyframes loginPopupShow {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.login-popup-close {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  border: none;
+  background: transparent;
+  font-size: 28px;
+  cursor: pointer;
+  color: #555;
+}
+
+.login-popup-close:hover {
+  color: #000;
+}
+
+.login-popup-icon {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.login-popup h2 {
+  margin: 0 0 10px;
+  font-size: 25px;
+  color: #111;
+}
+
+.login-popup p {
+  margin: 0 0 25px;
+  color: #666;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.login-popup-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.popup-cancel-btn,
+.popup-login-btn {
+  padding: 11px 25px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.popup-cancel-btn {
+  background: #f1f1f1;
+  border: 1px solid #ddd;
+  color: #333;
+}
+
+.popup-login-btn {
+  background: #000;
+  border: 1px solid #000;
+  color: #fff;
+}
+
+.popup-cancel-btn:hover {
+  background: #e5e5e5;
+}
+
+.popup-login-btn:hover {
+  background: #333;
+}

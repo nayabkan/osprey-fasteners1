@@ -1,0 +1,963 @@
+/* =====================================================
+   OSPREY - INVENTORY PAGE
+   Figma matching CSS
+===================================================== */
+
+.inventory-page-wrap {
+  width: 100%;
+  min-height: 100vh;
+  background: #fff;
+  color: #111;
+}
+
+
+/* =====================================================
+   MAIN INVENTORY CONTAINER
+===================================================== */
+
+.inventory-page {
+  width: 980px;
+  max-width: calc(100% - 40px);
+  margin: 0 auto;
+  padding: 55px 0 70px;
+}
+
+
+/* =====================================================
+   PAGE TITLE
+===================================================== */
+
+.inventory-page > h1 {
+  margin: 0 0 36px;
+
+  text-align: center;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 46px;
+  line-height: 1.1;
+  font-weight: 700;
+
+  color: #111;
+}
+
+
+/* =====================================================
+   SEARCH CONTROLS
+===================================================== */
+
+.inventory-controls {
+  width: 100%;
+}
+
+
+/* =====================================================
+   SEARCH ROW
+===================================================== */
+
+.search-row {
+  width: 100%;
+
+  display: flex;
+  align-items: stretch;
+
+  margin-bottom: 34px;
+}
+
+
+/* =====================================================
+   CATEGORY DROPDOWN
+===================================================== */
+
+.search-row select:first-child {
+  width: 158px;
+  height: 62px;
+
+  padding: 0 16px;
+
+  background: #000;
+  color: #fff;
+
+  border: 1px solid #000;
+  border-radius: 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+
+  cursor: pointer;
+}
+
+
+/* =====================================================
+   SEARCH INPUT
+===================================================== */
+
+.search-row input {
+  flex: 1;
+
+  height: 62px;
+
+  padding: 0 18px;
+
+  border: 1px solid #000;
+  border-left: none;
+
+  outline: none;
+
+  background: #fff;
+  color: #111;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.search-row input::placeholder {
+  color: #222;
+  opacity: 1;
+}
+
+
+/* =====================================================
+   SEARCH BUTTON
+===================================================== */
+
+.search-submit {
+  width: 64px;
+  height: 62px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #000;
+  border: 1px solid #000;
+
+  cursor: pointer;
+}
+
+
+/* =====================================================
+   SEARCH ICON
+===================================================== */
+
+.search-icon {
+  position: relative;
+
+  display: block;
+
+  width: 20px;
+  height: 20px;
+
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+
+.search-icon::after {
+  content: "";
+
+  position: absolute;
+
+  width: 9px;
+  height: 2px;
+
+  background: #fff;
+
+  right: -7px;
+  bottom: -4px;
+
+  transform: rotate(48deg);
+}
+
+
+/* =====================================================
+   REVIEW QUOTE
+===================================================== */
+
+.review-quote {
+  position: relative;
+
+  width: 156px;
+  height: 62px;
+
+  margin-left: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #000;
+  color: #fff;
+
+  text-decoration: none;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+.quote-count {
+  position: absolute;
+
+  top: -14px;
+  right: -14px;
+
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #000;
+  color: #fff;
+
+  border-radius: 50%;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+
+/* =====================================================
+   FILTER ROW
+===================================================== */
+
+.filter-row {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 34px;
+
+  margin-bottom: 42px;
+}
+
+
+/* =====================================================
+   ALL FILTER SELECTS
+===================================================== */
+
+.filter-row select {
+  height: 46px;
+
+  padding: 0 16px;
+
+  background: #000;
+  color: #fff;
+
+  border: 1px solid #000;
+  border-radius: 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+
+  cursor: pointer;
+}
+
+
+/* =====================================================
+   INDIVIDUAL FILTER WIDTHS
+===================================================== */
+
+.filter-row select:nth-child(1) {
+  width: 245px;
+}
+
+.filter-row select:nth-child(2) {
+  width: 181px;
+}
+
+.filter-row select:nth-child(3) {
+  width: 174px;
+}
+
+.filter-row select:nth-child(4) {
+  width: 145px;
+}
+
+
+/* =====================================================
+   SORT
+===================================================== */
+
+.sort-button {
+  width: 102px;
+  height: 46px;
+
+  background: #000;
+  color: #fff;
+
+  border: 1px solid #000;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+
+  cursor: pointer;
+}
+
+
+/* =====================================================
+   INVENTORY TABLE
+===================================================== */
+
+.inventory-table-section {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.inventory-table {
+  width: 100%;
+
+  border-collapse: collapse;
+  border-spacing: 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  color: #111;
+
+  /*
+    Important:
+    Fixed table layout keeps long
+    part numbers/descriptions from
+    expanding the columns.
+  */
+  table-layout: fixed;
+}
+
+
+/* =====================================================
+   TABLE HEADING
+===================================================== */
+
+.inventory-table thead th {
+  padding: 0 10px 18px;
+
+  text-align: left;
+
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+/* =====================================================
+   COLUMN WIDTHS
+===================================================== */
+
+.inventory-table thead th:first-child {
+  width: 45px;
+}
+
+
+/* Part Number */
+
+.inventory-table thead th:nth-child(2) {
+  width: 235px;
+}
+
+
+/* Description */
+
+.inventory-table thead th:nth-child(3) {
+  width: 190px;
+}
+
+
+/* Quantity */
+
+.inventory-table thead th:nth-child(4) {
+  width: 150px;
+}
+
+
+/* Action */
+
+.inventory-table thead th:nth-child(5) {
+  width: 180px;
+}
+
+
+/* =====================================================
+   TABLE ROWS
+===================================================== */
+
+.inventory-table tbody tr {
+  height: 44px;
+}
+
+
+/* =====================================================
+   TABLE CELLS
+===================================================== */
+
+.inventory-table tbody td {
+  padding: 4px 10px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+
+  line-height: 1.2;
+
+  /*
+    Keep normal cells on one line.
+    Long Part Number/Description
+    have their own truncation rules below.
+  */
+  white-space: nowrap;
+}
+
+
+/* =====================================================
+   ROW NUMBER
+===================================================== */
+
+.inventory-table .row-number {
+  text-align: left;
+}
+
+
+/* =====================================================
+   PART NUMBER - LONG TEXT FIX
+===================================================== */
+
+.inventory-table tbody td.part-number-cell {
+  width: 235px;
+  max-width: 235px;
+
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.inventory-part-number {
+  display: block;
+
+  width: 100%;
+  max-width: 235px;
+
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+
+  line-height: 1.2;
+}
+
+
+/* =====================================================
+   DESCRIPTION - LONG TEXT FIX
+===================================================== */
+
+.inventory-table tbody td.description-cell {
+  width: 190px;
+  max-width: 190px;
+
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.inventory-description {
+  display: block;
+
+  width: 100%;
+  max-width: 190px;
+
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+
+  line-height: 1.2;
+}
+
+
+/* =====================================================
+   ADD TO QUOTE - TABLE
+===================================================== */
+
+.add-quote {
+  height: 36px;
+
+  padding: 0 13px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #fff;
+  color: #111;
+
+  border: 1px solid #111;
+  border-radius: 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+}
+
+.add-quote span {
+  margin-right: 4px;
+
+  font-size: 21px;
+  line-height: 1;
+}
+
+
+/* =====================================================
+   NO PRODUCTS
+===================================================== */
+
+.no-products {
+  text-align: center !important;
+
+  padding: 35px 10px !important;
+
+  color: #666;
+
+  white-space: normal !important;
+}
+
+
+/* =====================================================
+   PAGINATION
+===================================================== */
+
+.pagination-section {
+  width: 100%;
+
+  margin-top: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+/* =====================================================
+   ITEMS PER PAGE
+===================================================== */
+
+.items-per-page {
+  height: 42px;
+
+  padding: 0 14px;
+
+  background: #fff;
+  color: #111;
+
+  border: 1px solid #111;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+
+  cursor: pointer;
+}
+
+
+/* =====================================================
+   PAGINATION
+===================================================== */
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pagination button {
+  min-width: 36px;
+  height: 36px;
+
+  padding: 0 9px;
+
+  background: #fff;
+  color: #111;
+
+  border: 1px solid #111;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+
+  cursor: pointer;
+}
+
+.pagination button.active-page {
+  background: #000;
+  color: #fff;
+}
+
+.pagination button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  padding: 0 5px;
+
+  font-size: 16px;
+}
+
+
+/* =====================================================
+   BOTTOM ACTION BUTTONS
+===================================================== */
+
+.inventory-bottom-actions {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 26px;
+
+  margin-top: 65px;
+  padding-bottom: 20px;
+}
+
+
+/* =====================================================
+   REQUEST QUOTE
+===================================================== */
+
+.inventory-request-btn {
+  width: 220px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #000;
+  color: #fff;
+
+  border: 1px solid #000;
+
+  text-decoration: none;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+
+/* =====================================================
+   ADD TO QUOTE
+===================================================== */
+
+.inventory-add-btn {
+  width: 220px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #fff;
+  color: #111;
+
+  border: 2px solid #111;
+
+  text-decoration: none;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.inventory-loading {
+  width: 100%;
+
+  padding: 40px 20px;
+
+  text-align: center;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+
+  color: #555;
+
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.inventory-error {
+  width: 100%;
+
+  padding: 30px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 15px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+
+  color: #b00020;
+
+  box-sizing: border-box;
+}
+
+.inventory-error button {
+  padding: 8px 15px;
+
+  background: #000;
+  color: #fff;
+
+  border: 1px solid #000;
+
+  cursor: pointer;
+}
+
+
+/* =====================================================
+   HOVER
+===================================================== */
+
+.review-quote:hover,
+.inventory-request-btn:hover {
+  background: #222;
+}
+
+.inventory-add-btn:hover,
+.add-quote:hover {
+  background: #f5f5f5;
+}
+
+.search-submit:hover,
+.sort-button:hover,
+.filter-row select:hover,
+.search-row select:first-child:hover {
+  background: #151515;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1100px) {
+
+  .inventory-page {
+    width: 94%;
+  }
+
+  .search-row {
+    flex-wrap: wrap;
+    gap: 0;
+  }
+
+  .review-quote {
+    margin-left: 20px;
+  }
+
+  .filter-row {
+    gap: 12px;
+  }
+
+  .filter-row select:nth-child(1),
+  .filter-row select:nth-child(2),
+  .filter-row select:nth-child(3),
+  .filter-row select:nth-child(4) {
+    width: auto;
+    flex: 1;
+  }
+
+  .sort-button {
+    width: 90px;
+  }
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 800px) {
+
+  .inventory-page {
+    width: 92%;
+    padding-top: 35px;
+  }
+
+  .inventory-page > h1 {
+    font-size: 38px;
+  }
+
+  .search-row {
+    display: grid;
+    grid-template-columns: 150px 1fr 60px;
+  }
+
+  .search-row select:first-child {
+    width: 100%;
+  }
+
+  .search-row input {
+    width: 100%;
+  }
+
+  .search-submit {
+    width: 60px;
+  }
+
+  .review-quote {
+    grid-column: 1 / -1;
+
+    width: 160px;
+
+    margin: 15px 0 0 auto;
+  }
+
+  .filter-row {
+    flex-wrap: wrap;
+  }
+
+  .filter-row select:nth-child(1),
+  .filter-row select:nth-child(2),
+  .filter-row select:nth-child(3),
+  .filter-row select:nth-child(4),
+  .sort-button {
+    flex: none;
+    width: calc(50% - 8px);
+  }
+
+  .pagination-section {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .pagination {
+    flex-wrap: wrap;
+  }
+
+  .inventory-bottom-actions {
+    margin-top: 45px;
+  }
+
+
+  /* =========================================
+     TABLE LONG TEXT - TABLET
+  ========================================= */
+
+  .inventory-table {
+    min-width: 800px;
+    table-layout: fixed;
+  }
+
+  .inventory-table thead th:nth-child(2),
+  .inventory-table tbody td:nth-child(2) {
+    width: 210px;
+  }
+
+  .inventory-table thead th:nth-child(3),
+  .inventory-table tbody td:nth-child(3) {
+    width: 180px;
+  }
+
+  .inventory-part-number {
+    max-width: 210px;
+  }
+
+  .inventory-description {
+    max-width: 180px;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 550px) {
+
+  .inventory-page {
+    width: 94%;
+    max-width: none;
+  }
+
+  .inventory-page > h1 {
+    font-size: 34px;
+    margin-bottom: 28px;
+  }
+
+  .search-row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .search-row select:first-child,
+  .search-row input,
+  .search-submit {
+    width: 100%;
+    border: 1px solid #000;
+  }
+
+  .search-row input {
+    border-top: none;
+  }
+
+  .search-submit {
+    border-top: none;
+  }
+
+  .review-quote {
+    width: 100%;
+    margin: 15px 0 0;
+  }
+
+  .filter-row {
+    flex-direction: column;
+  }
+
+  .filter-row select:nth-child(1),
+  .filter-row select:nth-child(2),
+  .filter-row select:nth-child(3),
+  .filter-row select:nth-child(4),
+  .sort-button {
+    width: 100%;
+  }
+
+  .inventory-bottom-actions {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .inventory-request-btn,
+  .inventory-add-btn {
+    width: 100%;
+  }
+
+  .inventory-error {
+    flex-direction: column;
+    text-align: center;
+  }
+}

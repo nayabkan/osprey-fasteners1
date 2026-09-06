@@ -1,0 +1,816 @@
+/* =====================================================
+   OSPREY FASTENERS - NAVBAR
+===================================================== */
+
+.site-header {
+  width: 100%;
+  background: #fff;
+}
+
+
+/* =====================================================
+   TOP BLACK CERTIFICATION BAR
+===================================================== */
+
+.top-bar {
+  width: 100%;
+  height: 44px;
+  background: #000;
+  color: #fff;
+}
+
+.top-bar-inner {
+  width: calc(100% - 40px);
+  max-width: 1318px;
+  height: 44px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.top-certification {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.top-dot {
+  font-size: 15px;
+}
+
+.top-contact {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.top-contact a {
+  color: #fff;
+  text-decoration: underline;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  white-space: nowrap;
+}
+
+.contact-icon {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 1;
+}
+
+
+/* =====================================================
+   MAIN NAVBAR
+===================================================== */
+
+.navbar {
+  width: 100%;
+  height: 90px;
+
+  background: #fff;
+
+  position: relative;
+  z-index: 100;
+}
+
+.navbar-container {
+  width: calc(100% - 40px);
+  max-width: 1318px;
+  height: 90px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.logo {
+  margin-right: auto;
+
+  display: flex;
+  align-items: center;
+
+  color: #111;
+  text-decoration: none;
+}
+
+.logo-main {
+  font-family: Arial, Helvetica, sans-serif;
+
+  font-size: 28px;
+  line-height: 1;
+
+  font-weight: 700;
+
+  color: #111;
+}
+
+
+/* =====================================================
+   NAV MENU
+===================================================== */
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-link {
+  background: transparent;
+  border: 0;
+
+  color: #111;
+  text-decoration: none;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  padding: 10px 0;
+
+  display: flex;
+  align-items: center;
+
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  color: #000;
+}
+
+
+/* =====================================================
+   PRODUCTS
+===================================================== */
+
+.products-menu {
+  position: relative;
+}
+
+.products-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.chevron {
+  font-size: 17px;
+  line-height: 1;
+
+  position: relative;
+  top: -1px;
+}
+
+
+/* =====================================================
+   PRODUCTS DROPDOWN
+===================================================== */
+
+.dropdown {
+  position: absolute;
+
+  top: 42px;
+  left: -10px;
+
+  width: 155px;
+
+  background: #fff;
+
+  border: 1px solid #222;
+
+  padding: 0;
+
+  box-shadow: none;
+
+  z-index: 500;
+}
+
+.dropdown a {
+  display: block;
+
+  width: 100%;
+
+  color: #111;
+  text-decoration: none;
+
+  padding: 7px 9px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+
+  line-height: 1.25;
+
+  white-space: nowrap;
+}
+
+.dropdown a:hover {
+  background: #f3f3f3;
+}
+
+
+/* =====================================================
+   SEARCH BUTTON
+===================================================== */
+
+.search-btn {
+  width: 50px;
+  height: 44px;
+
+  padding: 0;
+  margin: 0;
+
+  background: #fff;
+
+  border: 1px solid #222;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  flex-shrink: 0;
+
+  transition: background 0.2s ease;
+}
+
+.search-btn:hover {
+  background: #f5f5f5;
+}
+
+
+/* =====================================================
+   SEARCH BUTTON
+===================================================== */
+
+.search-btn {
+  width: 50px;
+  height: 44px;
+
+  padding: 0;
+  margin: 0;
+
+  background: transparent;
+  border: none;
+  outline: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+
+/* =====================================================
+   MAGNIFYING GLASS
+===================================================== */
+
+.navbar-search-icon {
+  width: 20px;
+  height: 20px;
+
+  position: relative;
+  display: block;
+
+  box-sizing: border-box;
+
+  border: 2.5px solid #111;
+  border-radius: 50%;
+
+  transform: translate(-2px, -2px);
+
+  transition: transform 0.2s ease;
+}
+
+
+/* =====================================================
+   MAGNIFYING GLASS HANDLE
+===================================================== */
+
+.navbar-search-icon::after {
+  content: "";
+
+  position: absolute;
+
+  width: 10px;
+  height: 2.5px;
+
+  background: #111;
+
+  border-radius: 10px;
+
+  right: -8px;
+  bottom: -5px;
+
+  transform: rotate(48deg);
+
+  transform-origin: center;
+}
+
+
+/* =====================================================
+   HOVER
+===================================================== */
+
+.search-btn:hover .navbar-search-icon {
+  transform: translate(-2px, -2px) scale(1.08);
+}
+
+
+/* =====================================================
+   CLICK
+===================================================== */
+
+.search-btn:active .navbar-search-icon {
+  transform: translate(-2px, -2px) scale(0.95);
+}
+
+
+/* =====================================================
+   REMOVE DEFAULT BUTTON FOCUS BORDER
+===================================================== */
+
+.search-btn:focus {
+  outline: none;
+}
+
+.search-btn:focus-visible {
+  outline: none;
+}
+
+
+/* Magnifying glass */
+
+.navbar-search-icon {
+  width: 20px;
+  height: 20px;
+
+  position: relative;
+  display: block;
+
+  border: 3px solid #111;
+  border-radius: 50%;
+
+  box-sizing: border-box;
+
+  transform: rotate(-5deg);
+
+  transition: transform 0.2s ease;
+}
+
+
+/* Handle */
+
+.navbar-search-icon::after {
+  content: "";
+
+  position: absolute;
+
+  width: 10px;
+  height: 3px;
+
+  background: #111;
+
+  border-radius: 3px;
+
+  right: -8px;
+  bottom: -5px;
+
+  transform: rotate(48deg);
+
+  transform-origin: center;
+}
+
+
+/* Hover */
+
+.search-btn:hover .navbar-search-icon {
+  transform: rotate(-5deg) scale(1.08);
+}
+
+
+/* Click */
+
+.search-btn:active .navbar-search-icon {
+  transform: rotate(-5deg) scale(0.95);
+}
+
+.navbar-search-icon::after {
+  content: "";
+
+  position: absolute;
+
+  width: 9px;
+  height: 2px;
+
+  background: #111;
+
+  right: -7px;
+  bottom: -4px;
+
+  border-radius: 2px;
+
+  transform: rotate(45deg);
+  transform-origin: left center;
+}
+
+.search-btn:hover .navbar-search-icon {
+  transform: scale(1.08);
+}
+
+.search-btn:active .navbar-search-icon {
+  transform: scale(0.96);
+}
+
+
+/* =====================================================
+   AUTH BUTTONS
+===================================================== */
+
+.auth-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.auth-buttons .login-btn,
+.auth-buttons .register-btn {
+  color: #111;
+  text-decoration: none;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+
+  font-weight: 700 !important;
+
+  white-space: nowrap;
+}
+
+.auth-buttons .login-btn:hover,
+.auth-buttons .register-btn:hover {
+  color: #000;
+}
+
+.auth-buttons .auth-separator {
+  margin: 0 3px;
+
+  color: #111;
+
+  font-size: 17px;
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   LOGGED-IN USER
+===================================================== */
+
+.auth-user-menu {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.auth-user-name {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #111;
+  white-space: nowrap;
+}
+
+.logout-btn {
+  background: transparent;
+  border: 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+
+  color: #111;
+
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  text-decoration: underline;
+}
+
+
+/* =====================================================
+   REQUEST QUOTE
+===================================================== */
+
+.quote-btn {
+  height: 45px;
+  min-width: 180px;
+
+  padding: 0 18px;
+
+  background: #000;
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  position: relative;
+
+  box-sizing: border-box;
+}
+
+.quote-btn:hover {
+  background: #111;
+}
+
+
+/* =====================================================
+   QUOTE COUNT
+===================================================== */
+
+.nav-count {
+  position: absolute;
+
+  right: -8px;
+  top: -8px;
+
+  width: 20px;
+  height: 20px;
+
+  border-radius: 50%;
+
+  background: #000;
+  color: #fff;
+
+  border: 2px solid #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   GLOBAL SEARCH
+===================================================== */
+
+.global-search {
+  position: absolute;
+
+  right: max(20px, calc((100% - 1318px) / 2));
+  top: 82px;
+
+  width: min(520px, calc(100% - 40px));
+
+  background: #fff;
+
+  border: 1px solid #222;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+  padding: 8px;
+
+  display: flex;
+
+  z-index: 600;
+
+  box-sizing: border-box;
+}
+
+.global-search input {
+  flex: 1;
+
+  min-width: 0;
+
+  border: 0;
+  outline: none;
+
+  padding: 10px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.global-search button {
+  background: #000;
+  color: #fff;
+
+  border: 0;
+
+  padding: 0 18px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+/* =====================================================
+   MOBILE MENU BUTTON
+===================================================== */
+
+.mobile-menu-btn {
+  display: none;
+
+  background: transparent;
+  border: 0;
+
+  font-size: 25px;
+
+  cursor: pointer;
+
+  margin-left: auto;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+  .top-contact {
+    gap: 15px;
+  }
+
+  .top-bar-inner {
+    font-size: 13px;
+  }
+
+  .nav-menu {
+    gap: 14px;
+  }
+
+  .nav-link {
+    font-size: 15px;
+  }
+
+  .logo-main {
+    font-size: 25px;
+  }
+
+  .quote-btn {
+    min-width: 160px;
+  }
+
+  .auth-buttons .login-btn,
+  .auth-buttons .register-btn {
+    font-size: 15px;
+  }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 850px) {
+
+  .top-bar {
+    height: 36px;
+  }
+
+  .top-bar-inner {
+    height: 36px;
+    width: 92%;
+    font-size: 10px;
+  }
+
+  .top-contact {
+    display: none;
+  }
+
+  .navbar,
+  .navbar-container {
+    height: 72px;
+  }
+
+  .navbar-container {
+    width: 92%;
+  }
+
+  .logo-main {
+    font-size: 22px;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  .nav-menu.open {
+    display: flex;
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    top: 72px;
+
+    background: #fff;
+
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 0;
+
+    padding: 20px 4%;
+
+    border-bottom: 1px solid #ddd;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .nav-menu.open .nav-link {
+    padding: 12px 0;
+  }
+
+  .dropdown {
+    position: static;
+
+    width: 100%;
+
+    box-shadow: none;
+
+    margin-top: 5px;
+  }
+
+  .search-btn {
+    width: 50px;
+    height: 44px;
+    margin: 10px 0;
+  }
+
+  .quote-btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .global-search {
+    top: 72px;
+    right: 4%;
+    width: 92%;
+  }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 520px) {
+
+  .top-bar-inner {
+    width: 94%;
+    font-size: 9px;
+  }
+
+  .navbar-container {
+    width: 94%;
+  }
+
+  .logo-main {
+    font-size: 20px;
+  }
+
+  .auth-buttons .login-btn,
+  .auth-buttons .register-btn {
+    font-size: 14px;
+  }
+}
