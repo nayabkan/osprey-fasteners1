@@ -1,330 +1,256 @@
-<<<<<<< Updated upstream
-# Osprey Fasteners
+Osprey Fasteners
 
-Full-stack web application for Osprey Fasteners built with React.js, FastAPI, PostgreSQL, SQLAlchemy, and Pydantic.
+A full-stack web application for Osprey Fasteners built with React.js, FastAPI, PostgreSQL, SQLAlchemy, and Pydantic.
 
-## Tech Stack
+The application provides product/inventory browsing, product search and filtering, quote management, Request Quote submission, and Contact Us functionality. The frontend communicates with a REST API powered by FastAPI, while PostgreSQL stores products, quote records, and contact submissions.
 
-### Frontend
-- React.js
-- React Router
-- Vite
-- CSS
+Features
 
-### Backend
-- Python
-- FastAPI
-- SQLAlchemy
-- Pydantic
-- Uvicorn
-- PostgreSQL
-- psycopg2
+Responsive Osprey Fasteners website
 
----
+Product and inventory listing
 
-## Main Features
+Product search
 
-- Home page with product categories
-- Inventory/product listing
-- Product search
-- Category filtering
-- Add to Quote
-- Quote quantity update
-- Remove quote items
-- Request Quote form
-- Contact Us form
-- PostgreSQL database integration
-- React ↔ FastAPI API communication
+Category filtering
 
----
+Add products to Quote
 
-## Database Flow
+Update quote item quantities
 
-### Add to Quote
+Remove quote items
 
-```text
+Request Quote form
+
+Contact Us form
+
+PostgreSQL database integration
+
+React + FastAPI REST API communication
+
+Swagger/OpenAPI API documentation
+
+Docker support for the application/database environment
+
+Environment-based configuration
+
+Technology Stack
+
+Frontend
+
+React.js
+
+React Router
+
+Vite
+
+JavaScript / JSX
+
+CSS
+
+Backend
+
+Python
+
+FastAPI
+
+SQLAlchemy
+
+Pydantic
+
+Uvicorn
+
+psycopg2
+
+Database
+
+PostgreSQL
+
+DevOps
+
+Docker
+
+Docker Compose
+
+Project Structure
+
+osprey-fasteners1/
+│
+├── backend/
+│   ├── app/
+│   │   ├── ...
+│   │   └── main.py
+│   ├── Dockerfile
+│   └── requirements.txt
+│
+├── frontend/
+│   ├── public/
+│   │   └── images/
+│   ├── src/
+│   │   ├── ...
+│   │   └── ...
+│   ├── Dockerfile
+│   ├── index.html
+│   ├── package.json
+│   └── package-lock.json
+│
+├── docker-compose.yml
+├── .gitignore
+└── README.md
+
+Application Flow
+
+Product / Inventory Flow
+
+Frontend
+   ↓
+Product / Inventory Page
+   ↓
+FastAPI REST API
+   ↓
+PostgreSQL
+   ↓
+Products returned to React
+
+Add to Quote Flow
+
 Inventory
-    ↓
+   ↓
 Add to Quote
-    ↓
+   ↓
 POST /quotes/
-    ↓
+   ↓
 quotes table
-```
 
-### Request Quote
+Request Quote Flow
 
-```text
-Request Quote → Submit
-    ↓
+Quote Items
+   ↓
+Request Quote Form
+   ↓
 POST /quotes/request
-    ↓
+   ↓
 quotes table
-```
 
-### Contact Us
+Contact Us Flow
 
-```text
-Contact Us → Submit
-    ↓
+Contact Us Form
+   ↓
 POST /api/contact/
-    ↓
+   ↓
 contact_messages table
-```
 
----
+Database
 
-## Database Tables
+The application uses PostgreSQL.
 
-### `products`
-Stores inventory/product information.
+Main Tables
 
-### `quotes`
-Stores:
-- Quote products
-- Quantity
-- Company name
-- Contact person
-- Email
-- Phone
-- Address
-- Message
-- Request ID
-- Created date
+products
 
-### `contact_messages`
-Stores Contact Us submissions:
-- Contact person/customer name
-- Email
-- Message
-- Phone/company fields as nullable
-- Items
-- Status
+Stores product and inventory information.
 
----
+Typical product information includes:
 
-# Backend Setup
+Product ID
 
-Open a terminal in the backend folder:
+Part number
 
-```bash
-cd backend
-```
+Product name
 
-Create a virtual environment:
+Category
 
-```bash
-python -m venv .venv
-```
+Inventory/product details
 
-Activate it on Windows PowerShell:
+quotes
 
-```powershell
-.venv\Scripts\Activate.ps1
-```
+Stores quote/cart items and submitted quote information.
 
-If PowerShell blocks activation:
+The implemented workflow includes information such as:
 
-```powershell
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-```
+Product
 
-Then activate again:
+Quantity
 
-```powershell
-.venv\Scripts\Activate.ps1
-```
+Company name
 
-Install dependencies:
+Contact person
 
-```bash
-pip install -r requirements.txt
-```
+Email
 
----
+Phone
 
-## PostgreSQL Configuration
+Address
 
-Create a PostgreSQL database, for example:
+Message
 
-```text
-osprey_fasteners
-```
+Request ID
 
-Configure `backend/.env`:
+Created date
 
-```env
-DATABASE_URL=postgresql+psycopg2://postgres:YOUR_PASSWORD@localhost:5432/osprey_fasteners
-```
+contact_messages
 
-Replace `YOUR_PASSWORD` with the PostgreSQL password.
+Stores Contact Us submissions, including:
 
-If OpenAI functionality is actually used by the project, configure:
+Customer/contact name
 
-```env
-OPENAI_API_KEY=YOUR_OPENAI_API_KEY
-OPENAI_MODEL=gpt-5-mini
-```
+Email
 
-Do not upload `.env` to GitHub.
+Phone
 
----
+Company
 
-# Run Backend
+Message
 
-From the `backend` directory:
+Items
 
-```bash
-uvicorn app.main:app --reload
-```
+Status
 
-If `uvicorn` is not recognized:
+API Endpoints
 
-```bash
-python -m uvicorn app.main:app --reload
-```
+Products
 
-Backend:
-
-```text
-http://127.0.0.1:8000
-```
-
-Swagger API documentation:
-
-```text
-http://127.0.0.1:8000/docs
-```
-
-Health check:
-
-```text
-http://127.0.0.1:8000/health
-```
-
-Expected health response:
-
-```json
-{
-  "status": "healthy"
-}
-```
-
----
-
-# Frontend Setup
-
-Open a second terminal:
-
-```bash
-cd frontend
-```
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Run the frontend:
-
-```bash
-npm run dev
-```
-
-The frontend normally runs at:
-
-```text
-http://localhost:5173
-```
-
----
-
-# Run Complete Project
-
-Use two terminals.
-
-### Terminal 1 — Backend
-
-```bash
-cd backend
-.venv\Scripts\Activate.ps1
-uvicorn app.main:app --reload
-```
-
-### Terminal 2 — Frontend
-
-```bash
-cd frontend
-npm run dev
-```
-
-Open:
-
-```text
-http://localhost:5173
-```
-
----
-
-# API Endpoints
-
-## Products
-
-```text
 GET /products/
-```
 
-## Add to Quote
+Returns available products/inventory.
 
-```text
+Add to Quote
+
 POST /quotes/
-```
 
-Example:
+Example request:
 
-```json
 {
   "product_id": 1,
   "part_number": "OS-NUT-999",
   "product_name": "Nut",
   "quantity": 5
 }
-```
 
-## Get Quote Items
+Get Quote Items
 
-```text
 GET /quotes/
-```
 
-## Update Quote Quantity
+Update Quote Quantity
 
-```text
 PUT /quotes/{quote_id}?quantity=5
-```
 
-## Delete Quote Item
+Delete Quote Item
 
-```text
 DELETE /quotes/{quote_id}
-```
 
-## Submit Request Quote
+Submit Request Quote
 
-```text
 POST /quotes/request
-```
 
 Example:
 
-```json
 {
   "company_name": "Osprey Fasteners",
-  "contact_person": "Nayab",
-  "email": "test@example.com",
+  "contact_person": "Customer Name",
+  "email": "customer@example.com",
   "phone": "9876543210",
-  "address": "California",
+  "address": "Customer Address",
   "message": "I need these fasteners.",
   "items": [
     {
@@ -335,63 +261,314 @@ Example:
     }
   ]
 }
-```
 
-## Contact Us
+Contact Us
 
-```text
 POST /api/contact/
-```
 
 Example:
 
-```json
 {
-  "customer_name": "Nayab",
-  "email": "test@example.com",
+  "customer_name": "Customer Name",
+  "email": "customer@example.com",
   "phone": null,
   "company": null,
   "message": "I need fasteners.",
   "items": "[]"
 }
-```
 
----
+Local Development Setup
 
-# Frontend API Configuration
+Prerequisites
 
-For local development the API is:
+Install:
 
-```text
+Python 3.x
+
+Node.js and npm
+
+PostgreSQL, or Docker Desktop with Docker Compose
+
+Git
+
+Backend Setup
+
+Open a terminal in the project root:
+
+cd backend
+
+Create a virtual environment:
+
+python -m venv .venv
+
+Windows PowerShell
+
+.venv\Scripts\Activate.ps1
+
+If PowerShell blocks activation:
+
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+
+Then activate again:
+
+.venv\Scripts\Activate.ps1
+
+Install backend dependencies:
+
+pip install -r requirements.txt
+
+Environment Variables
+
+Create:
+
+backend/.env
+
+Example:
+
+DATABASE_URL=postgresql+psycopg2://postgres:YOUR_PASSWORD@localhost:5432/osprey_fasteners
+
+If your application environment uses additional services, configure their required variables in .env.
+
+Never commit passwords, API keys, or other secrets to GitHub.
+
+Run Backend
+
+From the backend directory:
+
+uvicorn app.main:app --reload
+
+If uvicorn is not recognized:
+
+python -m uvicorn app.main:app --reload
+
+Backend URL:
+
 http://127.0.0.1:8000
-```
 
-If using a Vite environment variable, frontend `.env` can contain:
+Swagger API documentation:
 
-```env
+http://127.0.0.1:8000/docs
+
+Health check:
+
+http://127.0.0.1:8000/health
+
+Expected response:
+
+{
+  "status": "healthy"
+}
+
+Frontend Setup
+
+Open a second terminal:
+
+cd frontend
+
+Install dependencies:
+
+npm install
+
+Run the development server:
+
+npm run dev
+
+Frontend normally runs at:
+
+http://localhost:5173
+
+Frontend API Configuration
+
+For local development, the backend API is:
+
+http://127.0.0.1:8000
+
+If using Vite environment variables, create:
+
+frontend/.env
+
+and configure:
+
 VITE_API_URL=http://127.0.0.1:8000
-```
 
-For production, replace it with the deployed backend URL.
+For production, replace this value with the deployed backend URL.
 
----
+Running the Complete Project
 
-# CORS
+Terminal 1 — Backend
 
-The backend currently supports local React development:
+cd backend
+.venv\Scripts\Activate.ps1
+uvicorn app.main:app --reload
 
-```text
+Terminal 2 — Frontend
+
+cd frontend
+npm run dev
+
+Then open:
+
+http://localhost:5173
+
+Docker
+
+The repository includes Docker configuration for containerized deployment/development.
+
+Build and start the services:
+
+docker compose up --build
+
+Run in detached mode:
+
+docker compose up -d --build
+
+Stop the services:
+
+docker compose down
+
+Check running containers:
+
+docker compose ps
+
+If PostgreSQL is provided by the Docker Compose setup, make sure the backend DATABASE_URL matches the PostgreSQL service name, credentials, database name, and port defined in docker-compose.yml.
+
+CORS
+
+For local React development, the backend supports:
+
 http://localhost:5173
 http://127.0.0.1:5173
-```
 
-For deployment, add the actual production frontend domain.
+For production deployment, update the backend CORS configuration with the actual frontend domain.
 
----
+Troubleshooting
 
-# Recommended `.gitignore`
+ModuleNotFoundError: No module named 'app'
 
-```gitignore
+Make sure the terminal is inside the backend directory:
+
+cd backend
+
+Then run:
+
+python -m uvicorn app.main:app --reload
+
+uvicorn is not recognized
+
+Activate the virtual environment:
+
+.venv\Scripts\Activate.ps1
+
+Then install dependencies:
+
+pip install -r requirements.txt
+
+PostgreSQL connection error
+
+Check:
+
+PostgreSQL/Docker PostgreSQL is running
+
+Database exists
+
+Username is correct
+
+Password is correct
+
+Port is correct
+
+DATABASE_URL is correct
+
+Docker service name is correct when using Docker Compose
+
+Frontend cannot connect to backend
+
+First check:
+
+http://127.0.0.1:8000/health
+
+Then verify:
+
+VITE_API_URL
+
+Backend CORS configuration
+
+Backend server is running
+
+422 Unprocessable Entity
+
+A 422 response normally means the request body does not match the Pydantic schema expected by the API.
+
+Open:
+
+http://127.0.0.1:8000/docs
+
+and verify the endpoint's request body.
+
+Production Checklist
+
+Before production deployment:
+
+Use a production PostgreSQL database
+
+Configure production DATABASE_URL
+
+Configure the production frontend API URL
+
+Update CORS with the production frontend domain
+
+Keep .env files private
+
+Never expose database passwords or API keys
+
+Build the frontend:
+
+npm run build
+
+Configure a production FastAPI server
+
+Configure HTTPS
+
+Configure the production domain
+
+Test product/inventory pages
+
+Test product search
+
+Test category filtering
+
+Test Add to Quote
+
+Test quantity updates
+
+Test quote item removal
+
+Test Request Quote
+
+Test Contact Us
+
+Test frontend/backend communication
+
+Security Notes
+
+Do not commit:
+
+.env
+
+or any file containing:
+
+PostgreSQL passwords
+
+API keys
+
+JWT secrets
+
+Email service credentials
+
+Other private credentials
+
+Recommended .gitignore entries:
+
 # Python
 .venv/
 __pycache__/
@@ -407,679 +584,39 @@ dist/
 # IDE
 .vscode/
 .idea/
-```
 
-Never commit PostgreSQL passwords or API keys.
+Project Status
 
----
+The repository currently contains the implemented local workflow for:
 
-# Troubleshooting
+Home page
 
-## `ModuleNotFoundError: No module named 'app'`
+Inventory/product listing
 
-Make sure the terminal is inside `backend`:
+Product search
 
-```bash
-cd backend
-```
+Category filtering
 
-Then:
-
-```bash
-python -m uvicorn app.main:app --reload
-```
-
-## `uvicorn is not recognized`
-
-Activate the virtual environment:
-
-```powershell
-.venv\Scripts\Activate.ps1
-```
-
-Then:
-
-```bash
-pip install -r requirements.txt
-```
-
-## PostgreSQL connection error
-
-Check:
-
-- PostgreSQL service is running
-- Database exists
-- Username is correct
-- Password is correct
-- Port is normally `5432`
-- `DATABASE_URL` is correct
-
-## Frontend cannot connect to backend
-
-Check:
-
-```text
-http://127.0.0.1:8000/health
-```
-
-Then check the frontend API URL and backend CORS settings.
-
-## 422 Validation Error
-
-A `422` means the request body does not match the Pydantic schema expected by the endpoint.
-
-Open:
-
-```text
-http://127.0.0.1:8000/docs
-```
-
-and verify the request body.
-
----
-
-# Production Checklist
-
-Before deployment:
-
-- [ ] Use a production PostgreSQL database
-- [ ] Update `DATABASE_URL`
-- [ ] Update frontend API URL
-- [ ] Update CORS with production frontend domain
-- [ ] Keep `.env` private
-- [ ] Do not expose API keys
-- [ ] Build frontend:
-
-```bash
-npm run build
-```
-
-- [ ] Configure production FastAPI server
-- [ ] Configure domain and HTTPS
-- [ ] Test Inventory
-- [ ] Test Search
-- [ ] Test Add to Quote
-- [ ] Test Request Quote
-- [ ] Test Contact Us
-
----
-
-# Final Functional Flow
-
-```text
-                    OSPREY FASTENERS
-                           │
-        ┌──────────────────┼──────────────────┐
-        │                  │                  │
-     Inventory           Quote            Contact Us
-        │                  │                  │
-   Add to Quote       Submit Quote       Submit Form
-        │                  │                  │
-        ↓                  ↓                  ↓
-     /quotes/       /quotes/request     /api/contact/
-        │                  │                  │
-        ↓                  ↓                  ↓
-     quotes             quotes        contact_messages
-```
-
-## Project Status
-
-Current application functionality is complete for the implemented local workflow:
-
-- Home page
-- Inventory
-- Product search
-- Category filtering
-- Add to Quote
-- Quantity update
-- Quote item removal
-- Request Quote
-- Contact Us
-- PostgreSQL integration
-- FastAPI REST API
-- React/FastAPI communication
-
-Production deployment only requires environment-specific configuration such as production database, API URL, CORS, domain, HTTPS, and hosting/server setup.
-=======
-# Osprey Fasteners
-
-Full-stack web application for Osprey Fasteners built with React.js, FastAPI, PostgreSQL, SQLAlchemy, and Pydantic.
-
-## Tech Stack
-
-### Frontend
-- React.js
-- React Router
-- Vite
-- CSS
-
-### Backend
-- Python
-- FastAPI
-- SQLAlchemy
-- Pydantic
-- Uvicorn
-- PostgreSQL
-- psycopg2
-
----
-
-## Main Features
-
-- Home page with product categories
-- Inventory/product listing
-- Product search
-- Category filtering
-- Add to Quote
-- Quote quantity update
-- Remove quote items
-- Request Quote form
-- Contact Us form
-- PostgreSQL database integration
-- React ↔ FastAPI API communication
-
----
-
-## Database Flow
-
-### Add to Quote
-
-```text
-Inventory
-    ↓
 Add to Quote
-    ↓
-POST /quotes/
-    ↓
-quotes table
-```
 
-### Request Quote
+Quote quantity update
 
-```text
-Request Quote → Submit
-    ↓
-POST /quotes/request
-    ↓
-quotes table
-```
+Quote item removal
 
-### Contact Us
+Request Quote
 
-```text
-Contact Us → Submit
-    ↓
-POST /api/contact/
-    ↓
-contact_messages table
-```
+Contact Us
 
----
+PostgreSQL integration
 
-## Database Tables
+FastAPI REST API
 
-### `products`
-Stores inventory/product information.
+React/FastAPI communication
 
-### `quotes`
-Stores:
-- Quote products
-- Quantity
-- Company name
-- Contact person
-- Email
-- Phone
-- Address
-- Message
-- Request ID
-- Created date
+Docker configuration
 
-### `contact_messages`
-Stores Contact Us submissions:
-- Contact person/customer name
-- Email
-- Message
-- Phone/company fields as nullable
-- Items
-- Status
+Production deployment mainly requires environment-specific configuration such as the production database, API URL, CORS, domain, HTTPS, and hosting/server setup.
 
----
+License
 
-# Backend Setup
-
-Open a terminal in the backend folder:
-
-```bash
-cd backend
-```
-
-Create a virtual environment:
-
-```bash
-python -m venv .venv
-```
-
-Activate it on Windows PowerShell:
-
-```powershell
-.venv\Scripts\Activate.ps1
-```
-
-If PowerShell blocks activation:
-
-```powershell
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-```
-
-Then activate again:
-
-```powershell
-.venv\Scripts\Activate.ps1
-```
-
-Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-## PostgreSQL Configuration
-
-Create a PostgreSQL database, for example:
-
-```text
-osprey_fasteners
-```
-
-Configure `backend/.env`:
-
-```env
-DATABASE_URL=postgresql+psycopg2://postgres:YOUR_PASSWORD@localhost:5432/osprey_fasteners
-```
-
-Replace `YOUR_PASSWORD` with the PostgreSQL password.
-
-If OpenAI functionality is actually used by the project, configure:
-
-```env
-OPENAI_API_KEY=YOUR_OPENAI_API_KEY
-OPENAI_MODEL=gpt-5-mini
-```
-
-Do not upload `.env` to GitHub.
-
----
-
-# Run Backend
-
-From the `backend` directory:
-
-```bash
-uvicorn app.main:app --reload
-```
-
-If `uvicorn` is not recognized:
-
-```bash
-python -m uvicorn app.main:app --reload
-```
-
-Backend:
-
-```text
-http://127.0.0.1:8000
-```
-
-Swagger API documentation:
-
-```text
-http://127.0.0.1:8000/docs
-```
-
-Health check:
-
-```text
-http://127.0.0.1:8000/health
-```
-
-Expected health response:
-
-```json
-{
-  "status": "healthy"
-}
-```
-
----
-
-# Frontend Setup
-
-Open a second terminal:
-
-```bash
-cd frontend
-```
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Run the frontend:
-
-```bash
-npm run dev
-```
-
-The frontend normally runs at:
-
-```text
-http://localhost:5173
-```
-
----
-
-# Run Complete Project
-
-Use two terminals.
-
-### Terminal 1 — Backend
-
-```bash
-cd backend
-.venv\Scripts\Activate.ps1
-uvicorn app.main:app --reload
-```
-
-### Terminal 2 — Frontend
-
-```bash
-cd frontend
-npm run dev
-```
-
-Open:
-
-```text
-http://localhost:5173
-```
-
----
-
-# API Endpoints
-
-## Products
-
-```text
-GET /products/
-```
-
-## Add to Quote
-
-```text
-POST /quotes/
-```
-
-Example:
-
-```json
-{
-  "product_id": 1,
-  "part_number": "OS-NUT-999",
-  "product_name": "Nut",
-  "quantity": 5
-}
-```
-
-## Get Quote Items
-
-```text
-GET /quotes/
-```
-
-## Update Quote Quantity
-
-```text
-PUT /quotes/{quote_id}?quantity=5
-```
-
-## Delete Quote Item
-
-```text
-DELETE /quotes/{quote_id}
-```
-
-## Submit Request Quote
-
-```text
-POST /quotes/request
-```
-
-Example:
-
-```json
-{
-  "company_name": "Osprey Fasteners",
-  "contact_person": "Nayab",
-  "email": "test@example.com",
-  "phone": "9876543210",
-  "address": "California",
-  "message": "I need these fasteners.",
-  "items": [
-    {
-      "product_id": 1,
-      "part_number": "OS-NUT-999",
-      "product_name": "Nut",
-      "quantity": 5
-    }
-  ]
-}
-```
-
-## Contact Us
-
-```text
-POST /api/contact/
-```
-
-Example:
-
-```json
-{
-  "customer_name": "Nayab",
-  "email": "test@example.com",
-  "phone": null,
-  "company": null,
-  "message": "I need fasteners.",
-  "items": "[]"
-}
-```
-
----
-
-# Frontend API Configuration
-
-For local development the API is:
-
-```text
-http://127.0.0.1:8000
-```
-
-If using a Vite environment variable, frontend `.env` can contain:
-
-```env
-VITE_API_URL=http://127.0.0.1:8000
-```
-
-For production, replace it with the deployed backend URL.
-
----
-
-# CORS
-
-The backend currently supports local React development:
-
-```text
-http://localhost:5173
-http://127.0.0.1:5173
-```
-
-For deployment, add the actual production frontend domain.
-
----
-
-# Recommended `.gitignore`
-
-```gitignore
-# Python
-.venv/
-__pycache__/
-*.pyc
-
-# Environment
-.env
-
-# Node
-node_modules/
-dist/
-
-# IDE
-.vscode/
-.idea/
-```
-
-Never commit PostgreSQL passwords or API keys.
-
----
-
-# Troubleshooting
-
-## `ModuleNotFoundError: No module named 'app'`
-
-Make sure the terminal is inside `backend`:
-
-```bash
-cd backend
-```
-
-Then:
-
-```bash
-python -m uvicorn app.main:app --reload
-```
-
-## `uvicorn is not recognized`
-
-Activate the virtual environment:
-
-```powershell
-.venv\Scripts\Activate.ps1
-```
-
-Then:
-
-```bash
-pip install -r requirements.txt
-```
-
-## PostgreSQL connection error
-
-Check:
-
-- PostgreSQL service is running
-- Database exists
-- Username is correct
-- Password is correct
-- Port is normally `5432`
-- `DATABASE_URL` is correct
-
-## Frontend cannot connect to backend
-
-Check:
-
-```text
-http://127.0.0.1:8000/health
-```
-
-Then check the frontend API URL and backend CORS settings.
-
-## 422 Validation Error
-
-A `422` means the request body does not match the Pydantic schema expected by the endpoint.
-
-Open:
-
-```text
-http://127.0.0.1:8000/docs
-```
-
-and verify the request body.
-
----
-
-# Production Checklist
-
-Before deployment:
-
-- [ ] Use a production PostgreSQL database
-- [ ] Update `DATABASE_URL`
-- [ ] Update frontend API URL
-- [ ] Update CORS with production frontend domain
-- [ ] Keep `.env` private
-- [ ] Do not expose API keys
-- [ ] Build frontend:
-
-```bash
-npm run build
-```
-
-- [ ] Configure production FastAPI server
-- [ ] Configure domain and HTTPS
-- [ ] Test Inventory
-- [ ] Test Search
-- [ ] Test Add to Quote
-- [ ] Test Request Quote
-- [ ] Test Contact Us
-
----
-
-# Final Functional Flow
-
-```text
-                    OSPREY FASTENERS
-                           │
-        ┌──────────────────┼──────────────────┐
-        │                  │                  │
-     Inventory           Quote            Contact Us
-        │                  │                  │
-   Add to Quote       Submit Quote       Submit Form
-        │                  │                  │
-        ↓                  ↓                  ↓
-     /quotes/       /quotes/request     /api/contact/
-        │                  │                  │
-        ↓                  ↓                  ↓
-     quotes             quotes        contact_messages
-```
-
-## Project Status
-
-Current application functionality is complete for the implemented local workflow:
-
-- Home page
-- Inventory
-- Product search
-- Category filtering
-- Add to Quote
-- Quantity update
-- Quote item removal
-- Request Quote
-- Contact Us
-- PostgreSQL integration
-- FastAPI REST API
-- React/FastAPI communication
-
-Production deployment only requires environment-specific configuration such as production database, API URL, CORS, domain, HTTPS, and hosting/server setup.
->>>>>>> Stashed changes
+This project is intended for the Osprey Fasteners application. Add the appropriate license here if the project is being distributed publicly.
