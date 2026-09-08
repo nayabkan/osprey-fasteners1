@@ -11,8 +11,8 @@ services:
 
     environment:
       POSTGRES_DB: osprey_fasteners
-      POSTGRES_USER: Nayabkhan
-      POSTGRES_PASSWORD: Nayabkhan@12
+      POSTGRES_USER: Name_Postgres
+      POSTGRES_PASSWORD: XXXXXXXXXX
 
     ports:
       - "5433:5432"
